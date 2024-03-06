@@ -1,10 +1,10 @@
 import styles from "./SideBarElementIcon.module.css";
 /* eslint-disable react/prop-types */
-function SideBarElement({ iconname }) {
+function SideBarElement({ iconname, path }) {
   return (
     <li className={styles.li}>
       <div className={styles.container}>
-        <a href={`https://github.com/${iconname}`} className={styles.a}>
+        <a href={`${path}`} className={styles.a}>
           <img
             src={`src\\img\\${iconname}.png`}
             className={styles.icon}

@@ -14,6 +14,16 @@ const icons = [
   ["home", "issues", "pr", "projects", "discussions", "codespaces"],
   ["explore", "marketplace"],
 ];
+const paths = [
+  "dashboard",
+  "issues",
+  "pulls",
+  "projects",
+  "discussions",
+  "codespaces",
+  "explore",
+  "marketplace",
+];
 const links = ["about", "blog", "terms", "privacy", "security", "status"];
 const repos = [
   "FunctionEurus/CS142 Projects",
@@ -48,8 +58,12 @@ function Dialog({ handleClickClose }) {
           {icons.map((icons) => (
             <Section border={true} key={icons}>
               <ul>
-                {icons.map((icon) => (
-                  <SideBarElementIcon iconname={icon} key={icon} />
+                {icons.map((icon, index) => (
+                  <SideBarElementIcon
+                    iconname={icon}
+                    key={icon}
+                    path={paths[index]}
+                  />
                 ))}
               </ul>
             </Section>

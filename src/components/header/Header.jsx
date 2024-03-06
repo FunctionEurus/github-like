@@ -55,7 +55,6 @@ function Header({ title }) {
           <SearchBar handleClickSearch={handleClickSearch} />
 
           <p className={styles.p}>|</p>
-
           <TooltipRight tip="Create new...">
             <button type="button">
               <span className={styles.create_button}>

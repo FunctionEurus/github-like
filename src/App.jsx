@@ -11,6 +11,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={<Index />} />
+        <Route path="dashboard" element={<Index />} />
         <Route path="new" element={<New />} />
         <Route path="issues" element={<Issues />} />
         <Route path="pulls" element={<Pulls />} />
