@@ -1,0 +1,20 @@
+.button {
+  display: flex;
+  width: 100%;
+  color: #0969da;
+  justify-self: flex-start;
+  border: transparent;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:last-child {
+  padding-bottom: 5%;
+}
+
+.span {
+  font-size: xx-small;
+  font-weight: lighter;
+}

@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 2%;
+}
+
+.li {
+  list-style-type: none;
+  border-radius: 5px 5px 5px 5px;
+  height: 32px;
+}
+
+.li:hover {
+  background-color: #eaedf1;
+}
+
+.a {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.icon {
+  display: inline-block;
+  height: 100%;
+  width: auto;
+  padding: 4px;
+}
+
+.avatar {
+  display: inline-block;
+  height: 100%;
+  width: auto;
+  padding: 4px;
+}
+
+.comment {
+  /* font-size: smaller; */
+  display: inline-block;
+  width: 89%;
+  font-weight: lighter;
+  color: #252525;
+  align-self: center;
+}
+
+.comment::first-letter {
+  text-transform: uppercase;
+}

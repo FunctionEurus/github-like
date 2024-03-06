@@ -1,0 +1,11 @@
+.a {
+  display: flex;
+  height: 100%;
+  width: auto;
+}
+
+.logo {
+  padding: 0;
+  border-radius: 100%;
+  border-color: transparent;
+}
