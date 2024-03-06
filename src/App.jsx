@@ -1,47 +1,22 @@
-import { useEffect, useState } from "react";
-import Header from "./components/header/Header";
-import Dialog from "./components/sidebar/Dialog";
-import SearchBar from "./components/searchbar/SearchBar";
-import Curtain from "./components/sidebar/Curtain";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Index from "./pages/Index";
+import New from "./pages/New";
+import Issues from "./pages/Issues";
+import Pulls from "./pages/Pulls";
+import Notifications from "./pages/Notifications";
+import PageNotFound from "./pages/PageNotFound";
 
 export default function App() {
-  const [showDialog, setShowDialog] = useState(false);
-  const [showSearch, setshowSearch] = useState(false);
-
-  useEffect(() => {
-    const handleKeyPress = (event) => {
-      if (showSearch) return;
-      if (event.key === "/") {
-        setshowSearch((show) => !show);
-      }
-    };
-    document.addEventListener("keydown", handleKeyPress);
-    return () => {
-      document.removeEventListener("keydown", handleKeyPress);
-    };
-  }, [showSearch]);
-
-  function handleClickDialog() {
-    setShowDialog((show) => !show);
-  }
-
-  function handleClickSearch() {
-    setshowSearch((show) => !show);
-  }
-
   return (
-    <>
-      {showSearch && <SearchBar handleClickSearch={handleClickSearch} />}
-      {showDialog && (
-        <>
-          <Dialog handleClickClose={handleClickDialog} />
-          <Curtain />
-        </>
-      )}
-      <Header
-        handleClickMore={handleClickDialog}
-        handleClickSearch={handleClickSearch}
-      />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Index />} />
+        <Route path="new" element={<New />} />
+        <Route path="issues" element={<Issues />} />
+        <Route path="pulls" element={<Pulls />} />
+        <Route path="notifications" element={<Notifications />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }

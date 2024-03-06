@@ -32,13 +32,19 @@ function Header({ handleClickMore, handleClickSearch }) {
           </button>
         </TooltipRight>
 
-        <IconButtonWithTip src="src\\img\\issues.png" tip="Issues" />
-        <IconButtonWithTip src="src\\img\\pr.png" tip="Pull requests" />
+        <a href="/issues">
+          <IconButtonWithTip src="src\\img\\issues.png" tip="Issues" />
+        </a>
+        <a href="/pulls">
+          <IconButtonWithTip src="src\\img\\pr.png" tip="Pull requests" />
+        </a>
         <div className={styles.notification}>
-          <IconButtonWithTip
-            src="src\\img\\notification.png"
-            tip="You have unread notifications"
-          />
+          <a href="/notifications">
+            <IconButtonWithTip
+              src="src\\img\\notification.png"
+              tip="You have unread notifications"
+            />
+          </a>
         </div>
 
         <Avatar />
