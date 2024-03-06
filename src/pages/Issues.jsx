@@ -1,5 +1,12 @@
+import Header from "../components/header/Header";
+
 function Issues() {
-  return <div>This is issues page</div>;
+  return (
+    <>
+      <Header title="Issues" />
+      <div>This is issues page</div>
+    </>
+  );
 }
 
 export default Issues;

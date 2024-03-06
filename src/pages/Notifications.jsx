@@ -1,5 +1,12 @@
+import Header from "../components/header/Header";
+
 function Notifications() {
-  return <div>This is notifications page</div>;
+  return (
+    <>
+      <Header title="Notifications" />
+      <div>This is notifications page</div>
+    </>
+  );
 }
 
 export default Notifications;

@@ -1,5 +1,12 @@
+import Header from "../components/header/Header";
+
 function Pulls() {
-  return <div>This is pulls page</div>;
+  return (
+    <>
+      <Header title="Pull Requests" />
+      <div>This is pulls page</div>
+    </>
+  );
 }
 
 export default Pulls;
