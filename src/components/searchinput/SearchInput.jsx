@@ -36,7 +36,7 @@ function SearchInput({ handleClickSearch }) {
       <div className={styles.searchbar} ref={searchInputRef}>
         <div className={styles.suggestions}>
           <div className={styles.query}>
-            <form>
+            <form className={styles.form}>
               <input
                 className={styles.input}
                 type="text"
@@ -46,6 +46,14 @@ function SearchInput({ handleClickSearch }) {
                 }}
                 autoFocus
               ></input>
+              {query && (
+                <button
+                  className={styles.clear_button}
+                  onClick={() => setQuery("")}
+                >
+                  <img src="src\img\clear.png" />
+                </button>
+              )}
             </form>
             <div className={styles.owners_and_repos}>
               <div className={styles.section}>
