@@ -6,7 +6,7 @@
   border-radius: 12px;
   left: 100px;
   width: 70%;
-  height: 80%;
+  height: 70%;
   background-color: white;
 }
 
@@ -15,13 +15,15 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  padding: 0.5%;
+  padding: 0.5% 0;
+  padding-bottom: 0;
 }
 
 .query {
-  padding: 0.5%;
+  padding-top: 0.5%;
   width: 100%;
   height: 100%;
+  overflow-y: hidden;
 }
 
 .form {
@@ -32,11 +34,11 @@
 .input {
   background: url("src/img/search.png") no-repeat scroll 8px 8px;
   background-size: 2%;
-  width: 100%;
+  width: 98%;
   height: 32px;
   padding: 1%;
   padding-left: 30px;
-  margin-bottom: 1%;
+  margin: 0 1% 1% 1%;
   border-radius: 8px;
   border: 1px solid #ececec;
   border-left: transparent;
@@ -53,7 +55,7 @@
 .clear_button {
   border: none;
   position: absolute;
-  top: 3%;
+  top: 2%;
   right: 1.5%;
   height: 30px;
 }
@@ -73,6 +75,7 @@
 }
 
 .owners_and_repos {
+  margin-top: 1%;
   padding: 1% 0;
   overflow-y: scroll;
   height: 80%;
@@ -85,11 +88,13 @@
 }
 
 .footer {
+  border-top: 1px solid #ededed;
   display: flex;
   width: 100%;
-  height: auto;
+  height: 24px;
   justify-content: space-between;
-  padding: 0.5%;
+  padding: 1%;
+  padding-bottom: 0;
 }
 
 .a {
