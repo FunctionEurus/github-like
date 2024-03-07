@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+.li {
+  height: 32px;
+  width: 96%;
+  border-radius: 10px;
+  padding: 2%;
+  margin: 2%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.li:hover {
+  background-color: #eaedf1;
+}
+
+.a {
+  margin: 1%;
+  width: 100%;
+  display: flex;
+}
+
+.img {
+  padding: 2%;
+  height: 100%;
+  width: auto;
+}
+
+.span {
+  font-size: xx-small;
+  font-weight: lighter;
+  color: #6e7781;
+  padding: 2%;
+  height: 100%;
+  width: 80%;
+}

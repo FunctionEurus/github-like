@@ -10,9 +10,13 @@ import { useState, useEffect } from "react";
 import Dialog from "../sidebar/Dialog";
 import Curtain from "../sidebar/Curtain";
 import SearchInput from "../searchinput/SearchInput";
+import NewMenu from "./NewMenu";
+import Menu from "../menu/Menu";
 function Header({ title }) {
   const [showDialog, setShowDialog] = useState(false);
   const [showSearch, setshowSearch] = useState(false);
+  const [showNewMenu, setshowNewMenu] = useState(false);
+  const [showSelfMenu, setshowSelfMenu] = useState(false);
 
   useEffect(() => {
     const handleKeyPress = (event) => {
@@ -34,6 +38,15 @@ function Header({ title }) {
   function handleClickSearch() {
     setshowSearch((show) => !show);
   }
+
+  function handleClickNew() {
+    setshowNewMenu((show) => !show);
+  }
+
+  function handleClickAvatar() {
+    setshowSelfMenu((show) => !show);
+  }
+
   return (
     <>
       {showSearch && <SearchInput handleClickSearch={handleClickSearch} />}
@@ -57,7 +70,7 @@ function Header({ title }) {
 
           <p className={styles.p}>|</p>
           <TooltipRight tip="Create new...">
-            <button type="button">
+            <button type="button" onClick={handleClickNew}>
               <span className={styles.create_button}>
                 <img src="src\\img\\new.png" alt="icon-new" />
                 <p className={styles.p}>|</p>
@@ -65,6 +78,7 @@ function Header({ title }) {
               </span>
             </button>
           </TooltipRight>
+          {showNewMenu && <NewMenu />}
 
           <a href="/issues">
             <IconButtonWithTip src="src\\img\\issues.png" tip="Issues" />
@@ -81,7 +95,13 @@ function Header({ title }) {
             </a>
           </div>
 
-          <Avatar />
+          <Avatar handleClickAvatar={handleClickAvatar} />
+          {showSelfMenu && (
+            <>
+              <Menu handleClickAvatar={handleClickAvatar} />
+              {/* <Curtain /> */}
+            </>
+          )}
         </div>
       </header>
     </>
