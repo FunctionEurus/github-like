@@ -9,6 +9,7 @@ import TooltipRight from "./tooltip/TooltipRight";
 import { useState, useEffect } from "react";
 import Dialog from "../sidebar/Dialog";
 import Curtain from "../sidebar/Curtain";
+import SearchInput from "../searchinput/SearchInput";
 function Header({ title }) {
   const [showDialog, setShowDialog] = useState(false);
   const [showSearch, setshowSearch] = useState(false);
@@ -35,7 +36,7 @@ function Header({ title }) {
   }
   return (
     <>
-      {showSearch && <SearchBar handleClickSearch={handleClickSearch} />}
+      {showSearch && <SearchInput handleClickSearch={handleClickSearch} />}
       {showDialog && (
         <>
           <Dialog handleClickClose={handleClickDialog} />
