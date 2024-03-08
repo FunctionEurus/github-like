@@ -55,15 +55,14 @@
   width: auto;
 }
 
-.notification::after {
-  position: relative;
-  top: -2px;
-  left: -5px;
+.pesudo {
+  position: absolute;
+  top: 8px;
+  right: 45px;
   display: block;
   width: 6px;
   height: 6px;
   content: "";
   border-radius: 50%;
   background-color: brown;
-  /* visibility: hidden; */
 }

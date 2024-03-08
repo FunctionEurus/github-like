@@ -1,36 +1,40 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useRef } from "react";
-import Logo from "../header/Logo";
 import IconButton from "../header/iconbutton/IconButton";
-import IconButtonWithTipLeft from "../header/iconbutton/IconButtonWithTipLeft";
-import Copyright from "../sidebar/Copyright";
 import Section from "../sidebar/Section";
-import SideBarElementRepo from "../sidebar/sidebarelement/SideBarElementRepo";
 import SideBarElementIcon from "../sidebar/sidebarelement/SideBarElementIcon";
-import CookieLabel from "../sidebar/CookieLabel";
 import styles from "./Menu.module.css";
 import Avatar from "../header/Avatar";
 
-const icons = [
-  ["home", "issues", "pr", "projects", "discussions", "codespaces"],
-  ["explore", "marketplace"],
-];
-const paths = [
-  "dashboard",
-  "issues",
-  "pulls",
-  "projects",
-  "discussions",
-  "codespaces",
-  "explore",
-  "marketplace",
-];
-const links = ["about", "blog", "terms", "privacy", "security", "status"];
-const repos = [
-  "FunctionEurus/CS142 Projects",
-  "FunctionEurus/Re-MSHD",
-  "FunctionEurus/FunctionEurus",
-  "FunctionEurus/Re-MSHD vue",
+// const icons = [
+//   ["home", "issues", "pr", "projects", "discussions", "codespaces"],
+//   ["explore", "marketplace"],
+// ];
+// const paths = [
+//   "dashboard",
+//   "issues",
+//   "pulls",
+//   "projects",
+//   "discussions",
+//   "codespaces",
+//   "explore",
+//   "marketplace",
+// ];
+const content = [
+  ["Set status"],
+  ["Your profile", "Add account"],
+  [
+    "Your repositories",
+    "Your projects",
+    "Your copilot",
+    "Your organizations",
+    "Your enterprises",
+    "Your stars",
+    "Your sponsors",
+    "Your gists",
+  ],
+  ["Upgrade", "Try Enterprise", "Feature preview", "Settings"],
+  ["GitHub Docs", "GitHub Support"],
 ];
 
 function Menu({ handleClickAvatar }) {
@@ -52,44 +56,28 @@ function Menu({ handleClickAvatar }) {
     <>
       <dialog open className={styles.dialog} ref={DialogRef}>
         <div className={styles.first_row}>
-          <div className={styles.container}>
+          <div className={styles.avatar_and_name}>
             <Avatar />
-            <span className={styles.span}>Function Eurus</span>
-            <span className={styles.span}>FUNction</span>
+            <div className={styles.name}>
+              <span className={styles.username}>Function Eurus</span>
+              <span className={styles.span}>FUNction</span>
+            </div>
           </div>
           <IconButton src="src\img\close.png" onclick={handleClickAvatar} />
         </div>
         <div className={styles.scroll}>
-          {icons.map((icons) => (
-            <Section border={true} key={icons}>
+          {content.map((el) => (
+            <Section border={true} key={el}>
               <ul>
-                {icons.map((icon, index) => (
-                  <SideBarElementIcon
-                    iconname={icon}
-                    key={icon}
-                    path={paths[index]}
-                  />
+                {el.map((el) => (
+                  <SideBarElementIcon text={el} key={el} iconname="search" />
                 ))}
               </ul>
             </Section>
           ))}
-          <div className={styles.repositories}>
-            <div className={styles.container}>
-              <span className={styles.comment}>Repositories</span>
-            </div>
-            <IconButtonWithTipLeft
-              src="src\img\search.png"
-              tip="Filter repositories"
-            />
-          </div>
           <Section>
-            <ul>
-              {repos.map((repo) => (
-                <SideBarElementRepo reponame={repo} key={repo} />
-              ))}
-            </ul>
             <button className={styles.more}>
-              <span className={styles.comment}>Show more</span>
+              <span className={styles.comment}>Sign out</span>
             </button>
           </Section>
         </div>

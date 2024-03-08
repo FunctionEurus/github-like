@@ -1,6 +1,6 @@
 import styles from "./SideBarElementIcon.module.css";
 /* eslint-disable react/prop-types */
-function SideBarElement({ iconname, path }) {
+function SideBarElement({ iconname, path, text }) {
   return (
     <li className={styles.li}>
       <div className={styles.container}>
@@ -11,7 +11,7 @@ function SideBarElement({ iconname, path }) {
             alt={`icon-${iconname}`}
           />
           <span className={styles.comment}>
-            {iconname !== "pr" ? iconname : "pull requests"}
+            {text ? text : iconname !== "pr" ? iconname : "pull requests"}
           </span>
         </a>
       </div>

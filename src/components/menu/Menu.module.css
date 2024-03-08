@@ -10,6 +10,7 @@
   height: 100%;
   left: 78%;
   top: 0;
+  overflow-y: hidden;
   /* right: 50%; */
   z-index: 2;
   background-color: white;
@@ -30,26 +31,24 @@
 
 .span {
   display: block;
+  height: 50%;
+}
+
+.username {
+  display: block;
+  font-weight: normal;
+  color: #1f2328;
+  height: 50%;
 }
 
 .scroll {
-  height: 100%;
+  height: 90%;
   overflow-y: scroll;
 }
 
 .flex_box {
   display: flex;
   justify-content: space-between;
-}
-
-.repositories {
-  display: flex;
-  height: 100%;
-  width: auto;
-  justify-content: space-between;
-  height: 32px;
-  padding: 2%;
-  padding-right: 4%;
 }
 
 .more {
@@ -72,36 +71,22 @@
   padding: 2%;
 }
 
+.name {
+  height: 100%;
+  color: #6e7781;
+  font-size: smaller;
+  font-weight: lighter;
+}
+
+.avatar_and_name {
+  height: 100%;
+  display: flex;
+}
+
 .comment {
   display: inline-block;
   height: 100%;
   font-weight: light;
   color: #656d76;
   align-self: center;
-}
-
-.footer_container {
-  display: grid;
-  grid-template-rows: 4;
-  padding: 2%;
-}
-
-.links {
-  font-size: xx-small;
-  font-weight: lighter;
-  width: 100%;
-  display: flex;
-  color: #0969da;
-}
-
-.a:link {
-  padding-right: 1.5%;
-}
-
-.a:hover {
-  text-decoration: underline;
-}
-
-.a::first-letter {
-  text-transform: uppercase;
 }

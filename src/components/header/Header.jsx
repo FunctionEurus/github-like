@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import Avatar from "./Avatar";
-import IconButtonWithTip from "./iconbutton/IconButtonWithTipRight";
+import IconButtonWithTipRight from "./iconbutton/IconButtonWithTipRight";
 import Logo from "./Logo";
 import More from "./More";
 import SearchBar from "./SearchBar";
@@ -12,11 +12,14 @@ import Curtain from "../sidebar/Curtain";
 import SearchInput from "../searchinput/SearchInput";
 import NewMenu from "./NewMenu";
 import Menu from "../menu/Menu";
+import IconButtonWithTipLeft from "./iconbutton/IconButtonWithTipLeft";
+
 function Header({ title }) {
   const [showDialog, setShowDialog] = useState(false);
   const [showSearch, setshowSearch] = useState(false);
   const [showNewMenu, setshowNewMenu] = useState(false);
   const [showSelfMenu, setshowSelfMenu] = useState(false);
+  const [notifications, setNotifications] = useState([]);
 
   useEffect(() => {
     const handleKeyPress = (event) => {
@@ -81,18 +84,26 @@ function Header({ title }) {
           {showNewMenu && <NewMenu />}
 
           <a href="/issues">
-            <IconButtonWithTip src="src\\img\\issues.png" tip="Issues" />
+            <IconButtonWithTipRight src="src\\img\\issues.png" tip="Issues" />
           </a>
           <a href="/pulls">
-            <IconButtonWithTip src="src\\img\\pr.png" tip="Pull requests" />
+            <IconButtonWithTipRight
+              src="src\\img\\pr.png"
+              tip="Pull requests"
+            />
           </a>
           <div className={styles.notification}>
             <a href="/notifications">
-              <IconButtonWithTip
+              <IconButtonWithTipLeft
                 src="src\\img\\notification.png"
-                tip="You have unread notifications"
+                tip={
+                  notifications.length > 0
+                    ? "You have unread notifications"
+                    : "You have no unread notifications"
+                }
               />
             </a>
+            {notifications.length > 0 && <div className={styles.pesudo}></div>}
           </div>
 
           <Avatar handleClickAvatar={handleClickAvatar} />
