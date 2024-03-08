@@ -5,6 +5,7 @@ import Section from "../sidebar/Section";
 import SideBarElementIcon from "../sidebar/sidebarelement/SideBarElementIcon";
 import styles from "./Menu.module.css";
 import Avatar from "../header/Avatar";
+import Curtain from "../sidebar/Curtain";
 
 // const icons = [
 //   ["home", "issues", "pr", "projects", "discussions", "codespaces"],
@@ -82,6 +83,9 @@ function Menu({ handleClickAvatar }) {
           </Section>
         </div>
       </dialog>
+      <Curtain />
+      <Curtain />
+      <Curtain />
     </>
   );
 }
