@@ -81,7 +81,7 @@ function Header({ title }) {
               </span>
             </button>
           </TooltipRight>
-          {showNewMenu && <NewMenu />}
+          {showNewMenu && <NewMenu handleClickNew={handleClickNew} />}
 
           <a href="/issues">
             <IconButtonWithTipRight src="src\\img\\issues.png" tip="Issues" />

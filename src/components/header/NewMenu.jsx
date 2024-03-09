@@ -1,8 +1,24 @@
+/* eslint-disable react/prop-types */
+import { useEffect, useRef } from "react";
 import styles from "./NewMenu.module.css";
 import NewMenuElement from "./NewMenuElement";
-function NewMenu() {
+function NewMenu({ handleClickNew }) {
+  const NewMenuRef = useRef(null);
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (NewMenuRef.current && !NewMenuRef.current.contains(event.target)) {
+        handleClickNew();
+      }
+    };
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [handleClickNew]);
+
   return (
-    <ul className={styles.ul}>
+    <ul className={styles.ul} ref={NewMenuRef}>
       <NewMenuElement imgsrc="src\img\repo.png" href="new">
         New repository
       </NewMenuElement>
